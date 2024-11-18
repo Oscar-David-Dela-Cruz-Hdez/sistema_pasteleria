@@ -118,8 +118,8 @@ h1{
         <h1>Continua</h1>
         <div>
             <input type="text" name="txtusuario" required placeholder="nombre de usuario"
-            pattern="{1,18}" maxlength="18" 
-            title="El nombre de usuario solo debe contener 18 caracteres">
+            pattern="{1,10}" maxlength="10" 
+            title="El nombre de usuario solo debe contener 10 caracteres">
         </div>
         <br><br />
         <div>

@@ -1,23 +1,20 @@
+document.getElementById("formRegistro").addEventListener("submit", function(event) {
+    // Verificar si el formulario es válido
+    if (!this.checkValidity()) {
+        event.preventDefault(); // Evitar el envío si hay campos inválidos
+        alert("Por favor, completa todos los campos correctamente.");
+    }
+});
 
-    document.getElementById("registroForm").addEventListener("submit", function(event) {
-        // Seleccionar todos los campos requeridos
-        const campos = document.querySelectorAll("#registroForm input[required]");
-        let formularioValido = true;
+// Función para eliminar números y caracteres especiales en los campos de texto
+function evitarNumerosYCaracteresEspeciales(event) {
+    event.target.value = event.target.value.replace(/[^a-zA-Z\s]/g, ''); // Permitir solo letras y espacios
+}
 
-        campos.forEach(campo => {
-            // Quitar la clase de error para que no persista en cada intento
-            campo.classList.remove("error");
+// Selecciona los campos de nombre y apellidos
+const camposTexto = document.querySelectorAll('#nombre, #ap, #am');
 
-            // Si el campo está vacío, agregar la clase de error
-            if (!campo.value) {
-                campo.classList.add("error");
-                formularioValido = false;
-            }
-        });
-
-        // Si algún campo está vacío, evitar el envío del formulario
-        if (!formularioValido) {
-            event.preventDefault();
-            alert("Por favor, complete todos los campos requeridos.");
-        }
-    });
+// Agrega el evento "input" a cada campo para evitar números y caracteres especiales
+camposTexto.forEach(campo => {
+    campo.addEventListener('input', evitarNumerosYCaracteresEspeciales);
+});

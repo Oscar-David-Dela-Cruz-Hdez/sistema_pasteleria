@@ -1,6 +1,4 @@
-
 <form class="form" action="/Sistema_Pasteleria/index?clase=controladorCliente&metodo=AltaCliente" method="POST">
-
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/rojo.css">
     <script src="js/script.js"></script>
@@ -16,15 +14,15 @@
         <label for="ap">Apellido Paterno:</label>
         <br>
         <input type="text" id="ap" name="txtAP" required 
-               pattern="[A-Za-z]{1,18}" maxlength="18" 
-               title="El apellido paterno solo debe contener letras y hasta 18 caracteres">
+               pattern="[A-Za-z]{1,12}" maxlength="12" 
+               title="El apellido paterno solo debe contener letras y hasta 12 caracteres">
     </div>
     <div class="form-group">
         <label for="am">Apellido Materno:</label>
         <br>
         <input type="text" id="am" name="txtAM" required 
-               pattern="[A-Za-z]{1,18}" maxlength="18" 
-               title="El apellido materno solo debe contener letras y hasta 18 caracteres">
+               pattern="[A-Za-z]{1,12}" maxlength="12" 
+               title="El apellido materno solo debe contener letras y hasta 12 caracteres">
     </div>
     <div class="form-group">
         <label for="correo">Correo electrónico</label>
